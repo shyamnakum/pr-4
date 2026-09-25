@@ -1,0 +1,236 @@
+================================================================================
+                    GITHUB REPOSITORY SETUP & PUSH GUIDE
+================================================================================
+
+STEP 1: CREATE A REPOSITORY ON GITHUB
+================================================================================
+
+1. Go to GitHub.com and log in to your account
+2. Click the "+" icon in the top-right corner → Select "New repository"
+3. Enter repository name (e.g., "my-first-project", "ai-code-generator")
+4. Add optional description
+5. Choose visibility:
+   - Public: Anyone can see it
+   - Private: Only you and collaborators can see it
+6. DO NOT initialize with README, .gitignore, or license yet
+7. Click "Create repository"
+8. Copy the repository URL (HTTPS or SSH)
+   Example: https://github.com/username/repository-name.git
+
+
+STEP 2: INSTALL GIT (if not already installed)
+================================================================================
+
+Windows:
+- Download from https://git-scm.com/download/win
+- Run installer and follow prompts
+- Keep default settings
+
+Mac:
+- Download from https://git-scm.com/download/mac
+- Or use Homebrew: brew install git
+
+Linux:
+- Ubuntu/Debian: sudo apt-get install git
+- Fedora: sudo dnf install git
+
+Verify installation:
+- Open terminal/command prompt
+- Type: git --version
+
+
+STEP 3: CONFIGURE GIT (first time only)
+================================================================================
+
+Open terminal/command prompt and run:
+
+  git config --global user.name "Your Name"
+  git config --global user.email "your.email@example.com"
+
+Example:
+  git config --global user.name "Shyam"
+  git config --global user.email "shyam@example.com"
+
+
+STEP 4: CLONE REPOSITORY IN VS CODE
+================================================================================
+
+Option A - Using VS Code Interface:
+1. Open VS Code
+2. Press Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (Mac)
+3. Type "Git: Clone"
+4. Paste your repository URL
+5. Select folder where you want to save it
+6. VS Code will clone the repo
+
+Option B - Using Terminal:
+1. Open terminal in VS Code (Ctrl+` or View → Terminal)
+2. Navigate to where you want the project:
+   cd Desktop
+   cd Documents
+   cd your-desired-folder
+
+3. Clone the repository:
+   git clone https://github.com/username/repository-name.git
+
+4. Navigate into the cloned folder:
+   cd repository-name
+
+5. Open it in VS Code:
+   code .
+
+
+STEP 5: ADD YOUR AI-GENERATED CODE
+================================================================================
+
+1. Create your code files in the repository folder
+   Examples: main.py, index.html, app.js, script.js
+
+2. Create a README.md file (best practice):
+   - Describe what your project does
+   - Add usage instructions
+   - List technologies used
+
+3. If needed, create a .gitignore file for files NOT to upload:
+   Example content:
+   *.log
+   node_modules/
+   __pycache__/
+   .env
+
+
+STEP 6: COMMIT YOUR CHANGES (Git Workflow)
+================================================================================
+
+USING TERMINAL:
+
+1. Check status of your files:
+   git status
+
+2. Stage all files for commit:
+   git add .
+
+   OR stage specific files:
+   git add filename.py
+   git add *.js
+
+3. Create a commit message (descriptive!):
+   git commit -m "Initial commit: Add main project files"
+
+   Good commit messages:
+   - "Add user authentication feature"
+   - "Fix bug in data parsing"
+   - "Update documentation"
+   - "Add AI model integration"
+
+4. Push to GitHub:
+   git push origin main
+
+   OR if your default branch is "master":
+   git push origin master
+
+USING VS CODE GUI:
+
+1. Click "Source Control" icon (left sidebar)
+2. Click "+" to stage files (or stage all)
+3. Type commit message in box
+4. Click checkmark to commit
+5. Click "..." menu → "Push" to upload to GitHub
+
+
+STEP 7: VERIFY ON GITHUB
+================================================================================
+
+1. Go to your GitHub repository URL
+2. Refresh the page
+3. You should see your files listed
+4. Click on files to view them
+5. Check the commit history (Commits tab)
+
+
+ADDITIONAL USEFUL COMMANDS
+================================================================================
+
+Check current branch:
+  git branch
+
+Create new branch:
+  git branch -b feature-name
+  git checkout -b feature-name
+
+Switch branches:
+  git checkout branch-name
+
+Pull latest changes:
+  git pull origin main
+
+View commit history:
+  git log
+
+Undo last commit (not pushed yet):
+  git reset --soft HEAD~1
+
+Delete file and commit:
+  git rm filename
+  git commit -m "Remove filename"
+
+
+TROUBLESHOOTING
+================================================================================
+
+Authentication Issues:
+- Use GitHub Personal Access Token instead of password
+- Settings → Developer settings → Personal access tokens
+- Generate token and use as password when prompted
+
+File too large error:
+- GitHub has 100MB file size limit
+- Remove file: git rm filename
+- Add to .gitignore to prevent future uploads
+
+"main" vs "master" branch confusion:
+- Check your default: git branch
+- GitHub now uses "main" by default
+- Older projects might use "master"
+
+Merge conflicts:
+- Open conflicted file in VS Code
+- Choose "Accept Current Change" or "Accept Incoming Change"
+- Commit after resolving
+
+
+BEST PRACTICES
+================================================================================
+
+✓ Commit frequently (multiple small commits > one giant commit)
+✓ Write clear, descriptive commit messages
+✓ Use .gitignore to exclude unnecessary files
+✓ Keep README.md updated
+✓ Review files before pushing (git diff)
+✓ Don't commit sensitive data (passwords, API keys)
+✓ Pull before pushing (git pull origin main)
+✓ Use branches for new features
+
+
+QUICK REFERENCE - COMPLETE WORKFLOW
+================================================================================
+
+1. git clone https://github.com/username/repo.git
+2. cd repo-name
+3. code .                          (open in VS Code)
+4. [Create/modify your code files]
+5. git add .
+6. git commit -m "Your message"
+7. git push origin main
+
+
+NEED HELP?
+================================================================================
+
+GitHub Docs: https://docs.github.com/
+Git Documentation: https://git-scm.com/doc
+VS Code Git Guide: https://code.visualstudio.com/docs/sourcecontrol/overview
+
+================================================================================
+Document created for easy reference during GitHub workflow setup
+================================================================================
